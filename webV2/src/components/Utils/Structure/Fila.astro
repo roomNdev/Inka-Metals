@@ -1,0 +1,26 @@
+---
+import Columnas from './Columnas.astro';
+// const {Columnas} = Astro.props 
+// console.log(Astro.props.);
+const {Contenido} = Astro.props
+console.log(Contenido);
+const NCol = Contenido.length
+
+// const data = Object.entries(Astro.props.Columnas).map((item) => {
+//     console.log(item, '----item');
+//     return {
+//     Columnas: item[1]
+// }
+// }
+// )
+
+---
+
+<div class=`grid grid-cols-${NCol} gap-8`>
+        {Contenido.map((item) => {
+            console.log(item, '----item');
+                return  <Columnas Contenido={item}></Columnas>
+            }
+        )
+}
+</div>

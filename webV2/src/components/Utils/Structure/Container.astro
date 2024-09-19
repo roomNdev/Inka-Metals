@@ -1,0 +1,7 @@
+---
+const {width} = Astro.props
+---
+
+<div class={`${!width && 'container'} mx-auto`} style={`${width && `max-width: ${width};`}`}>
+    <slot/>
+</div>

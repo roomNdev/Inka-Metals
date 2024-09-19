@@ -1,0 +1,29 @@
+{
+  "name": "regular-resonance",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/markdoc": "^0.11.4",
+    "@astrojs/tailwind": "^5.1.0",
+    "@iconify-json/fa6-brands": "^1.1.22",
+    "@iconify-json/tabler": "^1.1.120",
+    "astro": "^4.14.5",
+    "astro-icon": "^1.1.1",
+    "swiper": "^11.1.10",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^8.4.0",
+    "eslint": "^9.9.1",
+    "eslint-plugin-astro": "^1.2.3"
+  }
+}

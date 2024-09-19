@@ -1,0 +1,17 @@
+{
+    "titulo": "La Empresa",
+    "texto1": "INAMESA es una empresa peruana con mas de 36 años de presencia en el mercado peruano dedicándose en sus inicios a la comercialización de planchas, tuberías, y accesorios de acero inoxidable. En la actualidad cuenta con tres grandes unidades de negocios: MATERIALES, INDUSTRIAL y PROYECTOS.",
+    "imagen1": "/images/nosotros.jpg",
+    "tituloCol1": "NUESTRA --MISIÓN--",
+    "tituloCol2": "NUESTRA --VISIÓN--",
+    "textoCol1": "Brindar productos y soluciones integrales en acero inoxidable y metales en general, satisfaciendo las necesidades de nuestros clientes con un alto estándar de calidad.",
+    "textoCol2": "Ser la empresa líder en Latinoamérica en la comercialización de productos y ejecución de proyectos en acero inoxidable y metales en general",
+    "textoDestacado": "INAMESA",
+    "texto2": "INAMESA es una empresa peruana con mas de 36 años de presencia en el mercado peruano dedicándose en sus inicios a la comercialización de planchas, tuberías, y accesorios de acero inoxidable. En la actualidad cuenta con tres grandes unidades de negocios: MATERIALES, INDUSTRIAL y PROYECTOS.",
+    "srcIcono1": "/industria/industria-1.png",
+    "textoIcono1": "Alto estándar /n --de calidad--",
+    "srcIcono2": "/industria/industria-2.png",
+    "textoIcono2": "Alto estándar /n --de calidad--",
+    "srcIcono3": "/industria/industria-3.png",
+    "textoIcono3": "Alto estándar /n --de calidad--"
+}

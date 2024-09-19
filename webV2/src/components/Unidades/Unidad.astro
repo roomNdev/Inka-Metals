@@ -1,0 +1,30 @@
+---
+export interface Props {
+  title: string;
+  subTitle: string;
+  image: string;
+  background: string;
+  url: string;
+}
+
+const { title, subTitle, image, background, url } = Astro.props;
+---
+
+<div class="box-info-wrapper">
+  <a href={url} class="block">
+    <div class="box-info flex items-center pt-[30%] justify-start flex-col bg-cover bg-no-repeat bg-center w-[305px] mx-auto rounded-[25px] h-[329px] text-center ease-in-out hover:scale-[1.08] shadow-lg" style={`background-image: url('${background}')`}>
+      <img src={image} alt={title} class="">
+      <h3 class="font-verdana text-lg font-semibold text-white" set:html={title} />
+      <h2 class="font-verdana text-lg text-white" set:html={subTitle} />
+    </div>
+  </a>
+</div>
+
+<style>
+  .box-info h3 span {
+    @apply text-sm;
+  }
+  .box-info {
+    transition: opacity 2s 0.4s cubic-bezier(0.19, 1, 0.22, 1), transform 2s 0s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+</style>

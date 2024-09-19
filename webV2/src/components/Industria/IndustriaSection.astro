@@ -1,0 +1,46 @@
+---
+import InfoBox from './InfoBox.astro';
+
+const infoBoxes = [
+  {
+    image: "./industria/industria-1.png",
+    title: "Alto Estándar de Calidad",
+    delay: "0.4s"
+  },
+  {
+    image: "./industria/industria-2.png",
+    title: "Equipamiento y Tecnología de Punta",
+    delay: "0.8s"
+  },
+  {
+    image: "./industria/industria-3.png",
+    title: "Personal Calificado",
+    delay: "1.2s"
+  }
+];
+---
+
+<div >
+  <div class="mb-5 text-center">
+    <h2 class="font-[verdana] font-semibold title-with-lines text-3xl text-[--main-text]" >
+      <strong class="">36</strong> AÑOS
+    </h2>
+    <h4 class="font-[verdana] font-semibold text-2xl text-[--main-text]">al servicio de la industria peruana</h4>
+  </div>
+
+  <div class="max-w-4xl mx-auto">
+    <p class="font-[verdana]  text-sm text-pretty leading-6 text-[--main-text]">
+      INAMESA empresa peruana presente en todos los sectores productivos: pesquero, minero-metalúrgico, agroindustrial, lácteo, inmobiliario, metalmecánico, energético, textil, químico apoyando y contribuyendo con el desarrollo de nuestro país.
+    </p>
+  </div>
+
+  <div class="flex flex-wrap justify-center mt-12 max-w-4xl mx-auto">
+    {infoBoxes.map((box) => (
+      <InfoBox 
+        image={box.image}
+        title={box.title}
+        delay={box.delay}
+      />
+    ))}
+  </div>
+</div>

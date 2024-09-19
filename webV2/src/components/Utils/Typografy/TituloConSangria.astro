@@ -1,0 +1,27 @@
+---
+const { Color, className } = Astro.props;
+const content = await Astro.slots.render('default')
+function formatContent(color?: string) {
+  // Check if the content contains any '--' patterns
+  if (!content.includes('--')) {
+    return content.replaceAll('/n', '<br>'); // Return the content as is if no patterns are found
+  }
+
+  const parts = content.split(/--(.+?)--/);
+  return parts.map((part, index) => {
+    if (index % 2 === 0) {
+      return part;
+    } else {
+      return `<span style="color: ${color || 'var(--main-title)'}">${part}</span>`;
+    }
+  }).join('').replaceAll('/n', '<br>');
+}
+---
+
+<div>
+  <!-- <h1 class={`text-3xl  text-black text-center ${className}`}> -->
+    <h1 class={`border-l-[3px] px-2 text-3xl  text-black ${className}`}>  
+    {/** Use the <slot> tag to render the content */}
+    <Fragment set:html={formatContent(Color)} />
+  </h1>
+</div>

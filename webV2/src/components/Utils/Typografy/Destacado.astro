@@ -1,0 +1,11 @@
+---
+import TitleWithLines from "./TituloConLineas.astro"
+
+const {Contenido, ...rest} = Astro.props
+---
+
+<div>
+    <TitleWithLines {...rest}>
+        {Contenido}
+    </TitleWithLines>
+</div>

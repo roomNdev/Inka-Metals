@@ -1,0 +1,41 @@
+---
+import SubMenu from './SubMenu.astro';
+
+const { item } = Astro.props;
+---
+
+<li class:list={[
+  "group",
+  { "current-menu-item": item.current },
+  { "has-submenu": item.hasChildren }
+]}>
+  <a href={item.url} class="
+  text-xs font-['AcuminPro-Bold'] uppercase font-bold text-[--nav-text] leading-[10px]
+   no-underline inline-block transition-all duration-250 relative z-[9999] hover:text-[--main-beige]
+   focus:text-[--main-beige] focus-visible:text-[--main-beige] group-[.current-menu-item]:text-[--main-beige] 
+   focus:outline-none focus-visible:ring-2 focus-visible:ring-[--main-beige] focus-visible:ring-opacity-50
+   group-hover-[.current-menu-item]:text-[--main-beige] h-full
+   ">
+    {item.title}
+  </a>
+  {item.hasChildren && <SubMenu subMenuItems={item.subMenuItems}/>}
+</li>
+
+<style>
+  li > a::before {
+    @apply h-[7px] w-[7px] content-[''] transition-opacity duration-300 absolute bg-[--main-beige] left-[-15px] opacity-0 mt-0;
+  }
+  li:hover > a::before,
+  li.current-menu-item > a::before,
+  li > a:focus::before,
+  li > a:focus-visible::before {
+    @apply opacity-100;
+  }
+  li.has-submenu::after {
+    @apply content-[''] w-0 h-0 border-solid border-[10px] border-transparent border-b-[--nav-submenu] absolute left-[calc(50%-10px)] bottom-[-10px] opacity-0 transition-opacity duration-300 ease-in-out;
+  }
+  li.has-submenu:hover::after,
+  li.has-submenu:focus-within::after {
+    @apply opacity-100;
+  }
+</style>

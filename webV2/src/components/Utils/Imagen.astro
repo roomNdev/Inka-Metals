@@ -1,0 +1,5 @@
+---
+const {Url, Descripcion, Redondeado} = Astro.props
+---
+
+<img src={Url} alt={Descripcion} class="w-full object-cover max-w-xl" class:list={{'rounded-lg': Redondeado}}> 

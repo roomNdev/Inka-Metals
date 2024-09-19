@@ -1,0 +1,151 @@
+{
+    "Componente": "Wrapper",
+    "Contenido": [
+      {
+        "Componente": "Titulo",
+        "Contenido": "holo",
+        "id": "1725770092748"
+      },
+      {
+        "Componente": "Fila",
+        "Contenido": [
+          [
+            {
+              "Componente": "Texto",
+              "Contenido": "hi",
+              "id": "1725770101411"
+            }
+          ],    
+          [
+            {
+              "Componente": "Titulo",
+              "Contenido": "holu",
+              "id": "1725770112191"
+            }
+          ]
+        ],
+        "id": "1725770099143"
+      }
+    ],
+    "id": "Wrapper",
+    "lol":{
+      "Contenido": [
+          {"Encabezado": {
+              "Contenido": "--La-- Empresa",
+              "Url": "/Fondos/Fondo1.jpg"
+              }
+          },{
+          "Texto": {
+              "Contenido": "INAMESA es una empresa peruana con mas de 36 años de presencia en el mercado peruano dedicándose en sus inicios a la comercialización de planchas, tuberías, y accesorios de acero inoxidable. En la actualidad cuenta con tres grandes unidades de negocios: MATERIALES, INDUSTRIAL y PROYECTOS."
+          }},{
+          "Imagen": {
+              "Url": "/images/nosotros.jpg",
+              "Descripcion": "Imagen de home"
+          }},
+          {
+          "Fila": {
+              "Columnas": [
+                  {
+                      "Contenido": [
+                          {
+                              "Titulo": {
+                                  "Contenido": "Nuesta --Misión--"
+                              }
+                          },
+                          {
+                              "Texto": {
+                                  "Contenido": "Brindar productos y soluciones integrales en acero inoxidable y metales en general, satisfaciendo las necesidades de nuestros clientes con un alto estándar de calidad.",
+                                  "Estilo": {
+                                      "Alineado": "text-left"
+                                  }
+                              }
+                          }
+                      ]
+                  },
+                  {
+                      "Contenido": [
+                          {
+                              "Titulo": {
+                                  "Contenido": "Nuesta --Visión--"
+                              }
+                          },
+                          {
+                              "Texto": {
+                                  "Contenido": "Ser la empresa líder en Latinoamérica en la comercialización de productos y ejecución de proyectos en acero inoxidable y metales en general",
+                                  "Estilo": {
+                                      "Alineado": "text-left"
+                                  }
+                              }
+                          }
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+      "Destacado": {
+          "Contenido": "Inka Metals",
+          "Color": "#000000"
+      }},
+      {
+          "Texto": {
+              "Contenido": "Empresa peruana presente en todos los sectores productivos: pesquero, minero-metalúrgico, agroindustrial, lácteo, inmobiliario, metalmecánico, energético, textil, químico apoyando y contribuyendo con el desarrollo de nuestro país.",
+              "Estilo": {
+                  "Tamaño": "text-lg"
+              }
+          }
+      },
+      {
+          "Fila": {
+              "Columnas": [
+                  {
+                      "Contenido": [
+                          {"Icono": {
+                              "Url": "/images/nosotros.jpg"
+                              }
+                          },
+                          {"Titulo": {
+                              "Estilo": {
+                                  "Alineado": "center"
+                              },
+                              "Contenido": "Alto estándar /n --de calidad--"
+                              }
+                          }   
+                      ],
+                      "Estilo": "display: flex; justify-content: center; align-items:center"
+                  },
+                  {
+                      "Contenido": [
+                          {"Icono": {
+                              "Url": "/images/nosotros.jpg"
+                              }
+                          },   
+                          {"Titulo": {
+                              "Estilo": {
+                                  "Alineado": "center"
+                              },
+                              "Contenido": "Equipamiento y /n --Tecnologia de punta--"
+                          }
+                      }
+                      ]
+                  },
+                  {
+                      "Contenido": [
+                          {"Icono": {
+                              "Url": "/images/nosotros.jpg"
+                              }
+                          },
+                          {"Titulo": {
+                              "Estilo": {
+                                  "Alineado": "center"
+                              },
+                              "Contenido": "Personal /n --calificado--"
+                          }
+                      }
+                      ]
+                  }
+              ]
+          }}
+      ]
+  }
+  }

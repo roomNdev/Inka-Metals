@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon/components'
+const socialLinks = [
+  { name: 'Facebook', href: 'https://www.facebook.com/inamesaperu/', icon: 'facebook' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/inamesaperu/', icon: 'linkedin' },
+  { name: 'Instagram', href: 'https://www.instagram.com/inamesa_peru/', icon: 'instagram' },
+  { name: 'YouTube', href: 'https://www.youtube.com/channel/UCOpwNVOnUIUAV5LKSc_0AfA', icon: 'youtube' }
+];
+---
+
+<div class="mt-4 md:mt-0">
+  <h6 class="text-white text-lg mb-3 inline-block mr-3">Siguenos:</h6>
+  <div class="flex space-x-2">
+    {socialLinks.map(({ name, href, icon }) => (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-white border-2 border-white rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-white hover:text-[#12263f]"
+        aria-label={name}
+      >
+        <Icon stroke-width={.5} name={`fa6-brands:${icon}`} />
+      </a>
+    ))}
+  </div>
+</div>

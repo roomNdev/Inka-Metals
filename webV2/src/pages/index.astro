@@ -1,0 +1,22 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/components/Utils/Structure/Container.astro';
+import MainSlider from '@/components/Slider/MainSlider.astro';
+import UnidadesContainer from '@/components/Unidades/UnidadesContainer.astro';
+import IndustriaWrapper from '@/components/Industria/IndustriaWrapper.astro';
+import Empresas from '@/components/Empresas/Empresas.astro';
+---
+
+<Layout title="INAMESA _ Planchas, Tuberías y Accesorios de acero inoxidable">
+  <!-- <Header /> -->
+  <main class="relative">
+    <!-- Main content goes here -->
+    <MainSlider></MainSlider>
+    <Container>
+      <UnidadesContainer></UnidadesContainer>
+      <IndustriaWrapper></IndustriaWrapper>
+      <Empresas></Empresas>
+    </Container>
+  </main>
+  <!-- <Footer /> -->
+</Layout>

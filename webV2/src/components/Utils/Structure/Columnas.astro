@@ -1,0 +1,48 @@
+---
+
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/components/Utils/Structure/Container.astro';
+import Destacado from '@/components/Utils/Typografy/Destacado.astro';
+import Encabezado from '@/components/Utils/Typografy/Encabezado.astro';
+import Texto from '@/components/Utils/Typografy/PortableText.astro';
+import Titulo from '@/components/Utils/Typografy/Titulo.astro';
+import Imagen from '@/components/Utils/Imagen.astro';
+import Fila from '@/components/Utils/Structure/Fila.astro';
+import Icono from '@/components/Utils/Icono.astro';
+
+
+const {Contenido, Estilo} = Astro.props
+
+console.log(Contenido, '---------data');
+
+const componentMap = {
+  Destacado,
+  Encabezado,
+  Texto,
+  Titulo,
+  Imagen,
+  Fila,
+  Icono
+};
+
+---
+
+
+<div class="pt-12" >
+  {
+    Contenido.map((item) => {
+    console.log(item);
+    const componentName = item.Component
+    const componentData = {Contenido: item.Contenido}
+    // // const [componentName, 
+    const Component = componentMap[componentName];
+    return Component ? <div class="py-2 w-full"><Component {...componentData}></Component></div> : null;
+  })}
+</div>
+{
+  Estilo && <style>
+     {
+
+    }
+  </style>
+}

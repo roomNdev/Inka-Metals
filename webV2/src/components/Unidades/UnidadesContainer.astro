@@ -1,0 +1,51 @@
+---
+import Unidad from './Unidad.astro';
+
+const unidades = [
+  {
+    title: 'División Materiales',
+    subTitle: '',
+    image: './Unidades/unidad-1.png',
+    background: 'https://www.inamesa.pe/wp-content/uploads/2019/07/bg-unidad-1.jpg',
+    url: '#'
+  },
+  {
+    title: 'División Industrial',
+    subTitle: '',
+    image: './Unidades/unidad-2.png',
+    background: 'https://www.inamesa.pe/wp-content/uploads/2019/07/bg-unidad-2.jpg',
+    url: '#'
+  },
+  {
+    title: 'División',
+    subTitle: 'Proyectos e Ingeniería',
+    image: './Unidades/unidad-3.png',
+    background: 'https://www.inamesa.pe/wp-content/uploads/2019/07/bg-unidad-3.jpg',
+    url: '#'
+  }
+];
+---
+
+<div class="py-20 px-0">
+  <div class="container mx-auto">
+    <div class="title verdana text-center mb-10">
+      <h2 class="text-3xl text-[--nav-hover] title-with-lines  "><strong class="text-[--nav-hover]">UNIDADES</strong> DE NEGOCIO</h2>
+      <!-- <img src="./INAMESA _ Planchas, Tuberías y Accesorios de acero inoxidable_files/bg-title.png" alt="" class="absolute left-1/2 transform -translate-x-1/2 -top-14"> -->
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {unidades.map((unidad) => (
+        <Unidad {...unidad} />
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .unidades .box-info {
+    @apply opacity-0 translate-y-10 transition-all duration-200 ease-in-out;
+  }
+
+  :global(.active) .box-info {
+    @apply opacity-100 translate-y-0;
+  }
+</style>

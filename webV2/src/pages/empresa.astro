@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/components/Utils/Structure/Container.astro';
+import Destacado from '@/components/Utils/Typografy/Destacado.astro';
+import Encabezado from '@/components/Utils/Typografy/Encabezado.astro';
+import Texto from '@/components/Utils/Typografy/PortableText.astro';
+import Titulo from '@/components/Utils/Typografy/Titulo.astro';
+import Imagen from '@/components/Utils/Imagen.astro';
+import Fila from '@/components/Utils/Structure/Fila.astro';
+import Icono from '@/components/Utils/Icono.astro';
+import ContentLayout from '@/layouts/ContentLayout.astro';
+import PortableText from '@/components/Utils/Typografy/PortableText.astro';
+import TituloConSangria from '@/components/Utils/Typografy/TituloConSangria.astro';
+import TitleWithLines from '@/components/Utils/Typografy/TituloConLineas.astro';
+import { getEntry } from 'astro:content';
+
+const Paginas = await getEntry('paginas', 'empresa');
+
+const {data, id} = Paginas
+
+console.log(data);
+
+const componentMap = {
+  Destacado,
+  Encabezado,
+  Texto,
+  Titulo,
+  Imagen,
+  Fila,
+  Icono
+};
+
+---
+
+
+<ContentLayout encabezado={data.titulo} title=`${id} - Inka Metals`>
+    <main class="mb-32">
+      <!-- Main content goes here -->
+      <Container width="1150px">
+        <div class="flex flex-col items-center justify-center gap-12">
+          <PortableText className="max-w-4xl text-center">{data.texto1}</PortableText>
+          <img src={data.imagen1} alt="">
+          <div class="grid grid-cols-2 w-full">
+            <div class="flex flex-col w-full">
+              <TituloConSangria Contenido={data.tituloCol1}></TituloConSangria>
+              <PortableText className="max-w-2xl px-4">{data.textoCol1}</PortableText>
+            </div>
+            <div class="flex flex-col w-full">
+              <TituloConSangria Contenido={data.tituloCol2}></TituloConSangria>
+              <PortableText className="max-w-2xl px-4">{data.textoCol2}</PortableText>
+            </div>
+          </div>
+          <TitleWithLines Color="#000">{data.textoDestacado}</TitleWithLines>
+          <PortableText className="max-w-2xl text-center">{data.texto2}</PortableText>
+          
+          <div class="grid grid-cols-3 w-full">
+            <div class="flex flex-col w-full">
+              <Icono Url={data.srcIcono1}></Icono>
+              <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data.textoIcono1}</Titulo>
+            </div>
+            <div class="flex flex-col w-full">
+              <Icono Url={data.srcIcono2}></Icono>
+              <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data.textoIcono2}</Titulo>
+
+            </div>
+            <div class="flex flex-col w-full">
+              <Icono Url={data.srcIcono3}></Icono>
+              <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data.textoIcono3}</Titulo>
+
+            </div>
+          </div>
+          <!-- <Fila></Fila> -->
+          <!-- {
+            Contenido.map((item) => {
+            console.log(item);
+            const componentName = item.Component
+            const componentData = {Contenido: item.Contenido}
+            // // const [componentName, 
+            const Component = componentMap[componentName];
+            return Component ? <div class="py-2 w-full"><Component {...componentData}></Component></div> : null;
+          })} -->
+        </div>
+      </Container>
+    </main>
+  </ContentLayout>

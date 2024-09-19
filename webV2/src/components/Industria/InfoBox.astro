@@ -1,0 +1,10 @@
+---
+const { image, title, delay } = Astro.props;
+---
+
+<div class="w-full md:w-1/3 px-4 mb-8 wow fadeIn" data-wow-duration="1s" data-wow-delay={delay}>
+  <div class="max-w-[245px] mx-auto h-[225px] text-center border-3 border-dotted border-[--main-beige] border-4 rounded-[35px] transition-all duration-200 pt-6 px-4">
+    <img src={image} alt={title} class="mx-auto mb-4">
+    <h3 class="text-[var(--main-text)] font-['Source_Sans_Pro'] text-xl font-semibold">{title}</h3>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+---
+import TitleWithLines from './TituloConLineas.astro';
+
+
+interface Props {
+  Contenido: string;
+  Url?: string;
+  Color?: string;
+}
+const { Url = '/Fondos/Fondo3.png', Contenido, Color } = Astro.props;
+
+function formatContent(content: string, color?: string) {
+  // Check if the content contains any '--' patterns
+  if (!content.includes('--')) {
+    return content; // Return the content as is if no patterns are found
+  }
+
+  const parts = content.split(/--(.+?)--/);
+  return parts.map((part, index) => {
+    if (index % 2 === 0) {
+      return part;
+    } else {
+      return `<span style="color: ${color || 'var(--main-title)'}">${part}</span>`;
+    }
+  }).join('');
+}
+
+const formattedContent = formatContent(Contenido, Color);
+---
+
+<div class=" min-h-40 flex items-center justify-center h-[300px]" >
+  <div class="absolute -z-10 top-0 w-full" style={`${Url ? `background-image:  url(${Url}); background-size: cover; background-position: center bottom; background-repeat: no-repeat;` : ''} height: 250px;`}></div>
+  <TitleWithLines class="title-with-lines uppercase text-4xl font-bold text-white">
+    {formattedContent.includes('<span') ? (
+      <Fragment set:html={formattedContent} />
+    ) : (
+      formattedContent
+    )}
+  </TitleWithLines>
+</div>

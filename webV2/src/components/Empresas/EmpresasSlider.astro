@@ -1,0 +1,74 @@
+---
+// ClientCarousel.astro
+
+    
+const {clients} = Astro.props
+---
+
+<div class="carrusel-clientes">
+  <div class="swiper mySwiper h-60">
+    <div class="swiper-wrapper ">
+      {clients.map((client) => (
+        <div class="swiper-slide">
+          <img src={client.image} alt={`Cliente ${client.id}`} />
+        </div>
+      ))}
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script is:inline>
+    const clients = document.querySelector('.mySwiper .swiper-wrapper').childElementCount
+    console.log(clients);
+  new Swiper(".mySwiper", {
+    slidesPerView: Math.floor(clients/2),
+    slidesPerGroup: Math.floor(clients/2),
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      
+      el: ".mySwiper .swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".mySwiper .swiper-button-next",
+      prevEl: ".mySwiper .swiper-button-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+      },
+    },
+  });
+</script>
+
+<style>
+  .carrusel-clientes {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

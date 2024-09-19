@@ -1,0 +1,146 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Encabezado from '@/components/Utils/Typografy/Encabezado.astro';
+export interface Props {
+  title: string;
+  encabezado: string;
+}
+
+const { title, encabezado } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <Encabezado Contenido={encabezado}/>
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  table.custom-table {
+    width: 100%;
+    max-width: 1200px;
+    @apply shadow-xl;
+    thead  {
+      background-color:var(--nav-hover);
+      color: #fff;
+      font-size: 13.5px;
+    }
+    th {
+      padding: 7px 5px;
+    }
+    td {
+      padding: 12px 6px;
+    }
+    th, td {
+      text-align: center;
+    }
+  }
+  .title-with-lines {
+    position: relative;
+    display: inline-block;
+    padding-inline: 2rem;
+    &::after, &::before {
+      content: '';
+      position: absolute;
+      background: var(--nav-hover);
+      top: 50%;
+      height: 2px;
+      width: 77px;
+    }
+    &::after {
+        left: 100%;
+    }
+    &::before {
+        right: 100%;
+    }
+  }
+  @media (max-width: 600px) {
+    .title-with-lines {
+      &::after,&::before {
+        display: none;
+      }
+    }
+  }
+  
+  html {
+      --main-title: #a69b46;
+      --main-beige: #f7eb96;
+      --main-black: #000000;
+      --main-text: #333326;
+      --menu-item-hover: #fff8c6;
+      --nav-text: #ffffff;
+      --nav-bg: #c9be6b;
+      --nav-hover: #a69b46;
+        --nav-submenu: #ffffff
+    }
+    @font-face{
+    src: url("../fonts/UmbaSansBold.otf");
+    font-family: "UmbaSansBold"; 
+}
+    @font-face {
+    font-family: 'AcuminPro';
+    src: url('/fonts/acumin-pro-webfont/Acumin-RPro.woff')
+    }
+    
+
+    @font-face {
+    font-family: 'AcuminPro-Italic';
+    src: url('/fonts/acumin-pro-webfont/Acumin-ItPro.woff')
+    }
+    
+
+    @font-face {
+    font-family: 'AcuminPro-Bold';
+    src: url('/fonts/acumin-pro-webfont/Acumin-BdPro.woff')
+    }
+    
+
+    @font-face {
+    font-family: 'AcuminPro-Bold-Italic';
+    src: url('/fonts/acumin-pro-webfont/Acumin-BdItPro.woff')
+    }
+    @font-face {
+    font-family: 'Source Sans pro';
+    src: url('/fonts/source-sans-pro/SourceSansPro-Regular.ttf')
+    }
+@font-face{
+    src: url("../fonts/AlteHaasGroteskBold.ttf");
+    font-family: "AlteHaasGroteskBold"; 
+}
+@font-face{
+    src: url("../fonts/AlteHaasGroteskRegular.ttf");
+    font-family: "AlteHaasGroteskRegular"; 
+}
+@font-face{
+    src: url("../fonts/ArlonSemiBold-DEMO.otf");
+    font-family: "ArlonSemiBold"; 
+}
+@font-face{
+    src: url("../fonts/Enchanting_Celebrations.ttf");
+    font-family: "EnchantingCelebrations"; 
+}
+@font-face{
+    src: url("../fonts/verdana.ttf");
+    font-family: "Verdana"; 
+}
+@font-face{
+    src: url("../fonts/verdanab.ttf");
+    font-family: "VerdanaBold"; 
+}
+@font-face{
+    src: url("../fonts/VerdanaLight.ttf");
+    font-family: "VerdanaLight"; 
+    font-weight: 300;
+}
+</style>

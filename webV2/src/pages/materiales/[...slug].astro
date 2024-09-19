@@ -1,0 +1,61 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from 'astro:content';
+
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/components/Utils/Structure/Container.astro';
+import Destacado from '@/components/Utils/Typografy/Destacado.astro';
+import Encabezado from '@/components/Utils/Typografy/Encabezado.astro';
+import Texto from '@/components/Utils/Typografy/PortableText.astro';
+import Titulo from '@/components/Utils/Typografy/Titulo.astro';
+import Imagen from '@/components/Utils/Imagen.astro';
+import Fila from '@/components/Utils/Structure/Fila.astro';
+import Icono from '@/components/Utils/Icono.astro';
+import ContentLayout from '@/layouts/ContentLayout.astro';
+import PortableText from '@/components/Utils/Typografy/PortableText.astro';
+import TituloConSangria from '@/components/Utils/Typografy/TituloConSangria.astro';
+import TitleWithLines from '@/components/Utils/Typografy/TituloConLineas.astro';
+import { getEntry } from 'astro:content';
+
+// export async function getStaticPaths() {
+  
+//   // return pags.map(i => ([
+//     //   { params: { path: i.id}, props: { 'materiale' i. } },
+//     // ]))
+//   }
+// const pags = await getEntry('Materiales', 'planchas-de-acero-inoxidable')
+// pags.render()
+  
+// const Paginas = await getEntry('paginas', 'empresa');
+
+// const {data, id} = Paginas
+
+// console.log(data);
+
+// const componentMap = {
+//   Destacado,
+//   Encabezado,
+//   Texto,
+//   Titulo,
+//   Imagen,
+//   Fila,
+//   Icono
+// };
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('Materiales');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+---
+<ContentLayout encabezado={'DIVISION DE --MATERIALES--'} title=`${entry.slug} - Inka Metals`>
+  <Container>
+    <Content class:list={['flex flex-col items-center gap-16 mb-64']}></Content>
+  </Container>
+</ContentLayout>

@@ -1,0 +1,47 @@
+---
+import MenuItem from './MenuItem.astro';
+
+const menuItems = [
+  { id: 1, title: 'Home', url: '/', current: Astro.url.pathname === '/' },
+  { id: 2, title: 'La Empresa', url: '/empresa', current: Astro.url.pathname === '/empresa'  },
+  { id: 3, title: 'Materiales', url: '#', current: Astro.url.pathname.includes('/materiales'), hasChildren: true,
+   subMenuItems: [
+      { id: 1, title: 'Planchas de Acero Inoxidable', url: '/materiales/planchas-de-acero-inoxidable' },
+      { id: 2, title: 'Tuberías de Acero Inoxidable', url: '/materiales/tuberias-de-acero-inoxidable' },
+      { id: 3, title: 'Barras de Acero Inoxidable', url: '/materiales/barras-de-acero-inoxidable' },
+      { id: 4, title: 'Angulos y plantinas de acero inoxidable', url: '/materiales/angulos-y-plantinas-de-acero-inoxidable' },
+      { id: 5, title: 'Mallas de Tarrajeo y Mallas Mesh', url: '/materiales/mallas-de-tarrajeo-y-mallas-mesh' },
+      { id: 6, title: 'Accesorios de Acero Inoxidable', url: '/materiales/accesorios-de-acero-inoxidable' },
+      { id: 7, title: 'Elementos de Sujeción', url: '/materiales/elementos-de-sujecion' },
+    ]
+   },
+  { id: 4, title: 'Industrial', url: '#', current: Astro.url.pathname.includes('/industrial'), hasChildren: true,
+    subMenuItems: [
+        { id: 1, title: 'Planchas Perforadas', url: '/planchas-perforadas' },
+        { id: 2, title: 'Tubos y Filtros para Pozos de Agua', url: '/tubos-y-filtros-para-pozos' },
+        { id: 3, title: 'Cribas, Zarandas, Bandejas, Portacables', url: '/cribas-zarandas-bandejas-canaletas-portacables' },
+        { id: 4, title: 'Servicios Especializados', url: '/servicios-especializados' },
+      ]
+   },
+  { id: 5, title: 'Proyectos', url: '#', current: Astro.url.pathname === '/proyectos' },
+  { id: 6, title: 'Noticias', url: '#', current: Astro.url.pathname === '/noticias' },
+  { id: 7, title: 'Contacto', url: '#', current: Astro.url.pathname.includes('/contacto'), hasChildren: true,
+    subMenuItems: [
+        { id: 1, title: 'Clientes', url: 'clientes' },
+        { id: 2, title: 'Trabaja con Nosotros', url: 'trabaja-con-nosotros' },
+      ]
+   },
+];
+---
+
+<ul class="flex justify-center items-end p-0 m-0">
+  {menuItems.map((item) => (
+    <MenuItem item={item} />
+  ))}
+</ul>
+
+<style>
+  ul > :global(li) {
+    @apply inline-block ml-11 relative;
+  }
+</style>
