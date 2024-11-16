@@ -3,11 +3,11 @@ const { Color, className } = Astro.props;
 const content = await Astro.slots.render('default')
 function formatContent(color?: string) {
   // Check if the content contains any '--' patterns
-  if (!content.includes('--')) {
-    return content.replaceAll('/n', '<br>'); // Return the content as is if no patterns are found
+  if (!content?.includes('--')) {
+    return content?.replaceAll('/n', '<br>'); // Return the content as is if no patterns are found
   }
 
-  const parts = content.split(/--(.+?)--/);
+  const parts = content?.split(/--(.+?)--/);
   return parts.map((part, index) => {
     if (index % 2 === 0) {
       return part;

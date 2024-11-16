@@ -35,39 +35,39 @@ const componentMap = {
 ---
 
 
-<ContentLayout encabezado={data.titulo} title=`${id} - Inka Metals`>
+<ContentLayout encabezado={data?.titulo} title=`${id} - Inka Metals`>
     <main class="mb-32">
       <!-- Main content goes here -->
       <Container width="1150px">
         <div class="flex flex-col items-center justify-center gap-12">
-          <PortableText className="max-w-4xl text-center">{data.texto1}</PortableText>
-          <img src={data.imagen1} alt="">
+          <PortableText className="max-w-4xl text-center">{data?.texto1}</PortableText>
+          <img src={data?.imagen1} alt="">
           <div class="grid grid-cols-2 w-full">
             <div class="flex flex-col w-full">
-              <TituloConSangria Contenido={data.tituloCol1}></TituloConSangria>
-              <PortableText className="max-w-2xl px-4">{data.textoCol1}</PortableText>
+              <TituloConSangria Contenido={data?.tituloCol1}></TituloConSangria>
+              <PortableText className="max-w-2xl px-4">{data?.textoCol1}</PortableText>
             </div>
             <div class="flex flex-col w-full">
-              <TituloConSangria Contenido={data.tituloCol2}></TituloConSangria>
-              <PortableText className="max-w-2xl px-4">{data.textoCol2}</PortableText>
+              <TituloConSangria Contenido={data?.tituloCol2}></TituloConSangria>
+              <PortableText className="max-w-2xl px-4">{data?.textoCol2}</PortableText>
             </div>
           </div>
-          <TitleWithLines Color="#000">{data.textoDestacado}</TitleWithLines>
-          <PortableText className="max-w-2xl text-center">{data.texto2}</PortableText>
+          <TitleWithLines Color="#000">{data?.textoDestacado}</TitleWithLines>
+          <PortableText className="max-w-2xl text-center">{data?.texto2}</PortableText>
           
           <div class="grid grid-cols-3 w-full">
             <div class="flex flex-col w-full">
-              <Icono Url={data.srcIcono1}></Icono>
-              <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data.textoIcono1}</Titulo>
+              <Icono Url={data?.srcIcono1}></Icono>
+              <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data?.textoIcono1}</Titulo>
             </div>
             <div class="flex flex-col w-full">
-              <Icono Url={data.srcIcono2}></Icono>
-              <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data.textoIcono2}</Titulo>
+              <Icono Url={data?.srcIcono2}></Icono>
+              <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data?.textoIcono2}</Titulo>
 
             </div>
             <div class="flex flex-col w-full">
-              <Icono Url={data.srcIcono3}></Icono>
-              <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data.textoIcono3}</Titulo>
+              <Icono Url={data?.srcIcono3}></Icono>
+              <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data?.textoIcono3}</Titulo>
 
             </div>
           </div>
