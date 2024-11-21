@@ -55,32 +55,22 @@ const componentMap = {
           <TitleWithLines Color="#000">{data?.textoDestacado}</TitleWithLines>
           <PortableText className="max-w-2xl text-center">{data?.texto2}</PortableText>
           
-          <div class="grid grid-cols-3 w-full">
-            <div class="flex flex-col w-full">
+          <div class="lg:grid lg:grid-cols-3 flex flex-wrap items-center justify-around w-full">
+            <div class="flex flex-col ">
               <Icono Url={data?.srcIcono1}></Icono>
               <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data?.textoIcono1}</Titulo>
             </div>
-            <div class="flex flex-col w-full">
+            <div class="flex flex-col ">
               <Icono Url={data?.srcIcono2}></Icono>
               <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data?.textoIcono2}</Titulo>
 
             </div>
-            <div class="flex flex-col w-full">
+            <div class="flex flex-col ">
               <Icono Url={data?.srcIcono3}></Icono>
               <Titulo className="text-xl font-semibold" Color="var(--main-title)" >{data?.textoIcono3}</Titulo>
 
             </div>
           </div>
-          <!-- <Fila></Fila> -->
-          <!-- {
-            Contenido.map((item) => {
-            console.log(item);
-            const componentName = item.Component
-            const componentData = {Contenido: item.Contenido}
-            // // const [componentName, 
-            const Component = componentMap[componentName];
-            return Component ? <div class="py-2 w-full"><Component {...componentData}></Component></div> : null;
-          })} -->
         </div>
       </Container>
     </main>
