@@ -4,15 +4,15 @@ const {subMenuItems} = Astro.props
 console.log(subMenuItems, '----------------');
 ---
 
-<ul class="submenu absolute top-[140%] z-[100] p-0 min-w-[240px] text-white list-none text-left left-1/2 -translate-x-1/2 mt-0
+<ul class="submenu absolute hidden lg:block top-[140%] z-[100] p-0 min-w-[240px] text-white list-none text-left left-1/2 -translate-x-1/2 mt-0
  bg-[--nav-submenu] m-0 box-border overflow-hidden rounded-md opacity-0 invisible transition-[opacity,visibility,max-height]
   duration-300 ease-in-out group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible ">
   {subMenuItems.map((item, index) => (
-    <li class="px-2 bg-transparent transition-all duration-600 hover:bg-[--main-beige] focus-within:bg-[--main-beige] ">
+    <li class="px-2 bg-transparent transition-all duration-200 hover:bg-[--main-beige] focus-within:bg-[--main-beige] ">
       <a href={item.url} class:list={[
         "font-['Source_Sans_Pro']",
+        "font-semibold",
         "text-[--main-title]",
-        "font-medium",
         "text-sm",
         "leading-4",
         "py-3",
@@ -22,10 +22,9 @@ console.log(subMenuItems, '----------------');
         "w-full",
         "block",
         "relative",
-        "font-normal",
         "normal-case",
-        "hover:text-white",
-        "focus:text-white",
+        "hover:!text-[--main-title]",
+        "focus:!text-[--main-title]",
         "focus:outline-none",
         "focus-visible:ring-0",
         "focus-visible:ring-[--main-title]",

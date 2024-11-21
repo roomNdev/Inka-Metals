@@ -1,18 +1,61 @@
 ---
+import { Icon } from "astro-icon/components";
 import Logo from "./Logo.astro";
 import Navbar from "./Nav/Navbar.astro";
+import { isOpen } from "@/store";
+import MenuPrincipal from "./Nav/MenuPrincipal.astro";
+
 ---
 
-<header class=" bg-[--nav-bg] absolute z-50 w-full top-0">
-    <div class="container mx-auto">
+<header class=" bg-[--nav-bg] sticky z-50 w-full top-0 px-8" >
+    <div class=" mx-auto">
       <div class="grid grid-cols-3 items-center">
-        <div class="col-span-1 flex justify-center">
+        <div class="col-span-1 flex lg:justify-center justify-start">
           <!-- Logo and navigation toggle -->
            <Logo></Logo>
         </div>
-        <div class="col-span-2 flex justify-center">
-          <Navbar>
+        <div class="col-span-2 flex lg:justify-center justify-end">
+          <Navbar />
+            <button id="mobile-menu-toggle" class="lg:hidden  text-[--nav-text] focus:outline-none">
+              {isOpen.value ? <Icon class="size-8" name={"tabler:x"}></Icon> : <Icon class="size-8" name={"tabler:menu-2"}></Icon> }
+            </button>
         </div>
       </div>
     </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="lg:hidden absolute px-8 -ml-8 z-10 hidden bg-[--nav-bg] w-full">
+      <MenuPrincipal></MenuPrincipal>
+      <div class="p-4">
+        <div class="flex items-center text-[--nav-text] text-lg font-['Source_Sans_Pro']">
+          <Icon name="tabler:phone" class="size-8" ></Icon>
+          <strong class="text-[--main-beige] font-semibold">+51 123 456 789</strong>
+        </div>
+      </div>
+      <div id="mobile-over" class="lg:hidden absolute w-screen h-[calc(100vh-100%)] bg-transparent -ml-8">
+    </div>
+      
+    </div>
   </header>
+  <script>
+  import { isOpen } from '../store.js';
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileOver = document.getElementById('mobile-over');
+  mobileMenuToggle.addEventListener('click', openMenu);
+
+  // Configura el store a true cuando se hace clic en el botón
+  function openMenu() {
+    console.log('clicked!!!');
+      isOpen.set(!isOpen.value);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('appear-from-right');
+    }    
+
+    mobileOver.addEventListener('click', openMenu);
+  // Escucha los cambios en el store y muestra/oculta el menu en consecuencia
+    // isOpen.subscribe(open => {
+    //   mobileMenu.classList.toggle('hidden');
+    //   mobileMenu.classList.toggle('appear-from-right');
+    // })
+
+  </script>

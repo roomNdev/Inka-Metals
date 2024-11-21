@@ -24,6 +24,22 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
+  @keyframes appearFromTop {
+   0% {
+      transform: translateX(-100vw);
+      z-index: -10;
+   }
+   100% {
+      transform: translateX(0);
+      z-index: 10;
+   }
+} 
+
+  .appear-from-right {
+    animation: .2s linear both;
+    animation-name: appearFromTop;
+    animation-fill-mode: both;
+  }
   
   .title-with-lines {
     position: relative;

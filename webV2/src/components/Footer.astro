@@ -2,10 +2,15 @@
 import Copyright from '@/components/Footer/Copyright.astro';
 import SocialIcons from '@/components/Footer/SocialIcons.astro';
 import Logo from '@/components/Logo.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <footer class="bg-[--nav-bg] pt-14 mt-[70px] relative">
-  <div class="absolute bottom-full h-20 w-full max-w-full z-10" style="background-image: url(/Fondos/footer.jpg); background-position: bottom;"></div>
+  <!-- <div class="absolute bottom-full h-20 w-full max-w-full z-10" style="background-image: url(/Fondos/footer.jpg); background-position: bottom;"></div> -->
+   <!-- <div class="bg-[--nav-bg] absolute bottom-full h-20 w-full max-w-full z-10 after:bg-white after:contents after:w-[100%] -top-[20%] after:h-10 after:rounded-ee-[150%] after:rounded-es-[150%] after:z-10  after:absolute"></div> -->
+    <div class="bg-[--nav-bg] absolute bottom-full h-20 w-full max-w-full z-10 ">
+      <div style={{clipPath: "ellipse(70% 230.5% at 50% -152%)"}} class="bg-white absolute w-full h-full"></div>
+    </div>
   <div class="pb-5 pt-7 border-b border-[--main-beige]">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -13,18 +18,18 @@ import Logo from '@/components/Logo.astro';
           <Logo></Logo>
         </div>
         <div class="mb-4 font-sans text-lg text-white font-light">
-          <div class="flex flex-col md:flex-row md:justify-between">
+          <div class="flex flex-col md:justify-between justify-center items-center md:items-start">
             <div class="flex items-center mb-3 md:mb-0">
-              <img src="./INAMESA _ Planchas, Tuberías y Accesorios de acero inoxidable_files/phone-footer.png" alt="Telefono" class="mr-2 w-5 h-5">
+              <Icon name="tabler:phone" class='size-6'></Icon>
               <span>(01) 500 - 0620</span>
             </div>
             <div class="flex items-center">
-              <img src="./INAMESA _ Planchas, Tuberías y Accesorios de acero inoxidable_files/correo-footer.png" alt="Correo" class="mr-2 w-5 h-5">
+              <Icon name="tabler:mail" class='size-6'></Icon>
               <span>ventas@inamesa.com.pe</span>
             </div>
           </div>
           <div class="flex items-start mt-3">
-            <img src="./INAMESA _ Planchas, Tuberías y Accesorios de acero inoxidable_files/ubi-footer.png" alt="Dirección" class="mr-2 w-5 h-5 mt-1">
+            <Icon name="tabler:map-pin" class='size-6'></Icon>
             <span>Calle 5 Mz. L1 Sub lote 3B-B, Coop. Las Vertientes, Villa El Salvador</span>
           </div>
         </div>

@@ -1,14 +1,15 @@
 ---
+import { Icon } from 'astro-icon/components';
 import MenuPrincipal from './MenuPrincipal.astro';
 ---
 
-<nav class="border-none max-w-[1200px] h-auto py-8  lg:flex justify-center items-center hidden ">
+<nav class="border-none max-w-[1200px] h-auto py-8 lg:flex justify-center items-center hidden">
       <div id="navbar" class="p-0">
         <MenuPrincipal />
       </div>
   <div class="phone-top top-0 absolute flex right-0 items-center text-[--nav-text] text-lg font-['Source_Sans_Pro']">
     <div class="h-10 flex items-center w-[239px]">
-      <img src="/path-to-phone-icon.png" alt="Phone" class="mr-3.5 w-5 aspect-square" />
+      <Icon name="tabler:phone" class="size-8" ></Icon>
       <strong class="text-[--main-beige] font-semibold">+51 123 456 789</strong>
     </div>
   </div>
